@@ -25,20 +25,20 @@ namespace BlazorWeatherApp.Models
 			public int Weathercode { get; set;}
 		}
 
-	public string GetWeatherDescription(int code)
+	public (string description, string IconPath) GetWeatherDetails(int code)
 		{
 			return code switch
 			{
-				0 => "Clear Sky",
-				1 or 2 or 3 => "Cloudy",
-				45 or 48 => "Fog",
-				51 or 53 or 55 => "Drizzle",
-				61 or 63 or 65 => "Rain",
-				71 or 73 or 75 => "Snow",
-				80 or 81 or 82 => "Rain Showers",
-				95 => "Thunderstorm",
-				99 => "Thunderstorm with Hail",
-				_ => "Unknown",
+				0 => ("Clear Sky", "/images/sunny.png"),
+				1 or 2 or 3 => ("Cloudy", "/images/cloudy.png"),
+				45 or 48 => ("Fog", "images/fog.png"),
+				51 or 53 or 55 => ("Drizzle", "images/drizzle.png"),
+				61 or 63 or 65 => ("Rain", "images/rain.png"),
+				71 or 73 or 75 => ("Snow", "images/snow.png"),
+				80 or 81 or 82 => ("Rain Showers", "images/lightrain.png"),
+				95 => ("Thunderstorm", "images/thunderstorm.png"),
+				99 => ("Thunderstorm with Hail", "images/hail.png"),
+				_ => ("Unknown", "images/unknown.png"),
 			};
 		}
 	}

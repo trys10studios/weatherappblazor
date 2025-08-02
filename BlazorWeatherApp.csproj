@@ -11,4 +11,23 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.7" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\cloudy.png" />
+    <None Include="wwwroot\images\drizzle.png" />
+    <None Include="wwwroot\images\hail.png" />
+    <None Include="wwwroot\images\lightrain.png" />
+    <None Include="wwwroot\images\mostlycloudy.png" />
+    <None Include="wwwroot\images\partlycloudy.png" />
+    <None Include="wwwroot\images\rain.png" />
+    <None Include="wwwroot\images\snow.png" />
+    <None Include="wwwroot\images\sunny.png" />
+    <None Include="wwwroot\images\thunderstorms.png" />
+    <None Include="wwwroot\images\unknown.png" />
+    <None Include="wwwroot\images\windy.png" />
+  </ItemGroup>
+
 </Project>

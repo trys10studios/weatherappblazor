@@ -14,10 +14,17 @@
 
 @if (weather?.CurrentWeather != null)
 {
-<p></p>
-<p><b>Temperature:</b> @weather.CurrentWeather.Temperature °C (@weather.CurrentWeather.Temperaturef °F)</p>
-<p><b>Windspeed:</b> @weather.CurrentWeather.Windspeed km/h (@weather.CurrentWeather.Windspeedmph mph)</p>
-<p><b>Current Conditions:</b> @weather.GetWeatherDescription(weather.CurrentWeather.Weathercode) </p>
+    var weatherDetails = weather.GetWeatherDetails(weather.CurrentWeather.Weathercode);
+
+    <div>
+        <h3>
+            @weatherDetails.description
+            <img src="@weatherDetails.IconPath" alt="@weatherDetails.description" style="width: 100px; height: 100px; margin-left: 10px;" />
+        </h3>
+        <p>Temperature: @weather.CurrentWeather.Temperaturef°F, @weather.CurrentWeather.Temperature°C</p>
+        <p>Wind Speed: @weather.CurrentWeather.Windspeedmph mph, @weather.CurrentWeather.Windspeed kph</p>
+        <p></p>
+    </div>
 }
 else if (loading)
 {
