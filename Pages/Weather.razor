@@ -1,0 +1,90 @@
+﻿@using BlazorWeatherApp.Models;
+@using BlazorWeatherApp.Services;
+
+@page "/weather"
+@inject WeatherService WeatherService
+@inject HttpClient Http
+
+<h3>Weather App By City and State</h3>
+
+<input @bind="city" placeholder="Enter city" />
+<input @bind="state" placeholder="Enter state (optional)" />
+
+<button @onclick="GetWeatherByCity">Get Weather</button>
+
+@if (weather?.CurrentWeather != null)
+{
+<p></p>
+<p><b>Temperature:</b> @weather.CurrentWeather.Temperature °C (@weather.CurrentWeather.Temperaturef °F)</p>
+<p><b>Windspeed:</b> @weather.CurrentWeather.Windspeed km/h (@weather.CurrentWeather.Windspeedmph mph)</p>
+<p><b>Current Conditions:</b> @weather.GetWeatherDescription(weather.CurrentWeather.Weathercode) </p>
+}
+else if (loading)
+{
+    <p>Loading...</p>
+}
+else if (!string.IsNullOrEmpty(error))
+{
+    <p style="color:red">@error</p>
+}
+else
+{
+    <p>No weather data loaded yet.</p>
+}
+@code {
+    private string city = string.Empty;
+    private string state = string.Empty;
+    private WeatherResponse? weather;
+    private bool loading = false;
+    private string error = string.Empty;
+
+    private async Task GetWeatherByCity()
+    {
+        if (string.IsNullOrWhiteSpace(city))
+        {
+            error = "Please enter a city name.";
+            weather = null;
+            return;
+        }
+
+        loading = true;
+        error = string.Empty;
+        weather = null;
+
+        try
+        {
+            // Combine city and state for query
+            var query = $"{city.Trim()}, {state.Trim()}";
+            var url = $"https://nominatim.openstreetmap.org/search?q={Uri.EscapeDataString(query)}&format=json&limit=1";
+
+            var results = await Http.GetFromJsonAsync<List<NominatimResult>>(url);
+
+            if (results == null || results.Count == 0)
+            {
+                error = "City not found.";
+            }
+            else
+            {
+                var lat = double.Parse(results[0].lat);
+                var lon = double.Parse(results[0].lon);
+
+                // Call your WeatherService with lat/lon
+                weather = await WeatherService.GetWeatherAsync(lat, lon);
+            }
+        }
+        catch (Exception ex)
+        {
+            error = $"Error: {ex.Message}";
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    public class NominatimResult
+    {
+        public string lat { get; set; } = "";
+        public string lon { get; set; } = "";
+    }
+}
