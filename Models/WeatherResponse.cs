@@ -30,15 +30,17 @@ namespace BlazorWeatherApp.Models
 			return code switch
 			{
 				0 => ("Clear Sky", "/images/sunny.png"),
-				1 or 2 or 3 => ("Cloudy", "/images/cloudy.png"),
-				45 or 48 => ("Fog", "images/fog.png"),
-				51 or 53 or 55 => ("Drizzle", "images/drizzle.png"),
-				61 or 63 or 65 => ("Rain", "images/rain.png"),
-				71 or 73 or 75 => ("Snow", "images/snow.png"),
-				80 or 81 or 82 => ("Rain Showers", "images/lightrain.png"),
-				95 => ("Thunderstorm", "images/thunderstorm.png"),
-				99 => ("Thunderstorm with Hail", "images/hail.png"),
-				_ => ("Unknown", "images/unknown.png"),
+				1 => ("Mostly Clear", "/images/partlysunny.png"),
+				2 => ("Partly Cloudy", "/images/partlycloudy.png"),
+				3 => ("Cloudy", "/images/cloudy.png"),
+				45 or 48 => ("Fog", "/images/fog.png"),
+				51 or 53 or 55 => ("Drizzle", "/images/drizzle.png"),
+				61 or 63 or 65 => ("Rain", "/images/rain.png"),
+				71 or 73 or 75 => ("Snow", "/images/snow.png"),
+				80 or 81 or 82 => ("Rain Showers", "/images/lightrain.png"),
+				95 => ("Thunderstorm", "/images/thunderstorm.png"),
+				99 => ("Thunderstorm with Hail", "/images/hail.png"),
+				_ => ("Unknown", "/images/unknown.png"),
 			};
 		}
 	}

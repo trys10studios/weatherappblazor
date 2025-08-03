@@ -1075,10 +1075,10 @@ G:\BlazorWeatherApp\obj\Debug\net9.0\refint\BlazorWeatherApp.dll
 G:\BlazorWeatherApp\obj\Debug\net9.0\BlazorWeatherApp.pdb
 G:\BlazorWeatherApp\obj\Debug\net9.0\ref\BlazorWeatherApp.dll
 G:\BlazorWeatherApp\obj\Debug\net9.0\BlazorWeatherApp.sourcelink.json
-G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.pi0rtuikmr.wasm
-G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.6t6s2o533x.pdb
-G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.pi0rtuikmr.wasm.gz
-G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.6t6s2o533x.pdb.gz
-G:\BlazorWeatherApp\obj\Debug\net9.0\compressed\rq74o0m74n-pi0rtuikmr.gz
-G:\BlazorWeatherApp\obj\Debug\net9.0\compressed\r36ehei922-6t6s2o533x.gz
-G:\BlazorWeatherApp\obj\Debug\net9.0\compressed\2p3ppyfvwk-5bdos3vu6m.gz
+G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.dswktcikbf.wasm
+G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.yjqxx345ds.pdb
+G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.dswktcikbf.wasm.gz
+G:\BlazorWeatherApp\bin\Debug\net9.0\wwwroot\_framework\BlazorWeatherApp.yjqxx345ds.pdb.gz
+G:\BlazorWeatherApp\obj\Debug\net9.0\compressed\rq74o0m74n-dswktcikbf.gz
+G:\BlazorWeatherApp\obj\Debug\net9.0\compressed\r36ehei922-yjqxx345ds.gz
+G:\BlazorWeatherApp\obj\Debug\net9.0\compressed\2p3ppyfvwk-2gtloby1li.gz
